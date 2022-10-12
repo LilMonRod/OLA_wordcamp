@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordcamp Panama 2019</title>
+    <style>
+        .curved-corner-topright {
+            --animation-duration: 0.8s;
+        }
+
+        /* change frame */
+        @-webkit-keyframes moveDown {
+            20%{top: -275px;} to{top: 57px;}
+            }
+        @-moz-keyframes moveDown {
+            20%{top: -275px;} to{top: 57px;}
+            }
+        @-o-keyframes moveDown {
+            20%{top: -275px;} to{top: 57px;}
+            }
+        @keyframes moveDown {
+            20%{top: -275px;} to{top: 57px;}
+            }
+        .moveDown{
+            -webkit-animation-name:moveDown;
+            animation-name:moveDown;      
+        }
+        
+        @-webkit-keyframes fadeOut {
+            0% {opacity: 1}
+            to {opacity: 0}
+        }
+        @keyframes fadeOut {
+            0% {opacity: 1}
+            to {opacity: 0}
+        }
+        .fadeOut {
+            -webkit-animation-name: fadeOut;
+            animation-name: fadeOut
+        }
+                
+        @-webkit-keyframes fade {
+            0% {opacity: 0}
+            to {opacity: 1}
+        }
+        @keyframes fade {
+            0% {opacity: 0}
+            to {opacity: 1}
+        }
+        .fade {
+            -webkit-animation-name: fade;
+            animation-name: fade
+        }
+        
+
+        @-webkit-keyframes fadeUp {
+            0% { opacity: 0; top: var(--animate-offsetX); 
+            }
+            to { opacity: 1; top: var(--animate-offsetY);
+            }
+        }
+        
+        @keyframes fadeUp {
+            0% { opacity: 0; top: var(--animate-offsetX); 
+            }
+            to { opacity: 1; top: var(--animate-offsetY);
+            }
+        }
+        
+        .fadeUp {
+            -webkit-animation-name: fadeUp;
+            animation-name: fadeUp
+        }
+
+        @-webkit-keyframes slideRight {
+            0% {
+                transform: translate3d(-100%, 0, 0); opacity: 0;
+            }
+            to {
+                -webkit-transform: translateZ(0); transform: translateZ(0); opacity: 1;
+            }
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translate3d(-100%, 0, 0); opacity: 0;
+            }
+            to {
+                -webkit-transform: translateZ(0); transform: translateZ(0); opacity: 1;
+            }
+        }
+
+        .slideRight {
+            -webkit-animation-name: slideRight;
+            animation-name: slideRight
+        }
+
+        @-webkit-keyframes slideRightOut {
+            0% {
+                -webkit-transform: translateZ(0); transform: translateZ(0); opacity: 1;
+            }
+            to {
+                transform: translate3d(200%, 0, 0); opacity: 0;
+            }
+        }
+
+        @keyframes slideRightOut {
+            0% {
+                -webkit-transform: translateZ(0); transform: translateZ(0); opacity: 1;
+            }
+            to {
+                transform: translate3d(200%, 0, 0); opacity: 0;
+            }
+        }
+
+        .slideRightOut {
+            -webkit-animation-name: slideRightOut;
+            animation-name: slideRightOut
+        }
+
+        
+        @-webkit-keyframes slideUp {
+            0% {
+                top: 57px; opacity: 1;
+            }
+            to {
+                top: -275px; opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                top: 57px; opacity: 1;
+            }
+            to {
+                top: -275px; opacity: 1;
+            }
+        }
+
+        .slideUp {
+            -webkit-animation-name: slideUp;
+            animation-name: slideUp
+        }
+
+        @-webkit-keyframes pointingRight {
+            0% {
+                left: 58px; opacity: 1;
+            }
+            50% {
+                left: 52px; opacity: 1;
+            }
+            to {
+                left: 58px; opacity: 1;
+            }
+        }
+
+        @keyframes pointingRight {
+            0% {
+                left: 58px; opacity: 1;
+            }
+            50% {
+                left: 52px; opacity: 1;
+            }
+            to {
+                left: 58px; opacity: 1;
+            }
+        }
+
+        .pointingRight {
+            -webkit-animation-name: pointingRight;
+            animation-name: pointingRight
+        }
+        
+        .animate {
+            -webkit-animation-duration: var(--animation-duration);
+            animation-duration: var(--animation-duration);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+        }
+        .animate-infinite {
+            -webkit-animation-duration: var(--animation-duration);
+            animation-duration: var(--animation-duration);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite
+        }
+        .delay {
+            -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+            -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+        }
+        .delay1 {
+            -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+            -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+        }
+        .delay2 {
+            -webkit-animation-delay: 0.7s;
+            animation-delay: 0.7s;
+            -webkit-animation-delay: 0.7s;
+            animation-delay: 0.7s;
+        }
+        #logo {
+            --animate-offsetY: 34px;
+            --animate-offsetX: 80px;
+            --animation-duration: 0.6s;
+        }
+        #copyF1 {
+            --animate-offsetY: 107px;
+            --animate-offsetX: 167px;
+            --animation-duration: 0.6s;
+        }
+        #copy2F1 {
+            --animate-offsetY: 171px;
+            --animate-offsetX: 231px;
+            --animation-duration: 0.6s;
+        }
+
+        #copyCTA,
+        #copy1F2,
+        #copy2F2,
+        #copy3F2 {
+            --animation-duration: 0.6s;
+        }
+        .arrow-slow {
+            --animation-duration: 0.8s;
+        }
+        
+        #logoF2,
+        .arrow-fast {
+            --animation-duration: 0.4s;
+        }
+
+        </style>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body onload="init();" style="margin:0px;">
+    <script type="text/javascript">
+        var clickTag = "https://panamacity.wordcamp.org/2019/";
+    </script>
+    
+    <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:300px; height:250px">
+		<a href="javascript:void(window.open(clickTag))">
+            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:300px; height:250px; position: relative; left: 0px; top: 0px; display: block;background-color: #008299;">
+                
+                <!-- 1st frame -->
+                
+                <!-- 2nd frame -->
+            </div>
+        </a>
+	</div>
+</body>
+</html>
