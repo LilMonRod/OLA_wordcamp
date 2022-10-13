@@ -182,15 +182,6 @@
             -webkit-animation-iteration-count: 1;
             animation-iteration-count: 1;
         }
-        .animate-infinite {
-            -webkit-animation-duration: var(--animation-duration);
-            animation-duration: var(--animation-duration);
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-        
-            -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite
-        }
         .delay {
             -webkit-animation-delay: 0.5s;
             animation-delay: 0.5s;
@@ -203,25 +194,25 @@
             -webkit-animation-delay: 0.6s;
             animation-delay: 0.6s;
         }
-        .delay2 {
-            -webkit-animation-delay: 0.7s;
-            animation-delay: 0.7s;
-            -webkit-animation-delay: 0.7s;
-            animation-delay: 0.7s;
+        .delay3 {
+            -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+            -webkit-animation-delay: 3s;
+            animation-delay: 3s;
         }
-        #logo {
-            --animate-offsetY: 34px;
-            --animate-offsetX: 80px;
+        #logoF1 {
+            --animate-offsetY: 90px;
+            --animate-offsetX: 140px;
             --animation-duration: 0.6s;
         }
-        #copyF1 {
+        #copy1F1 {
             --animate-offsetY: 107px;
             --animate-offsetX: 167px;
             --animation-duration: 0.6s;
         }
         #copy2F1 {
-            --animate-offsetY: 171px;
-            --animate-offsetX: 231px;
+            --animate-offsetY: 0px;
+            --animate-offsetX: 40px;
             --animation-duration: 0.6s;
         }
 
@@ -240,6 +231,10 @@
             --animation-duration: 0.4s;
         }
 
+        #dom_overlay_container {
+            background-image: url("images/bg-WC.jpg");
+            background-size: contain;
+        }
         </style>
         <script type="text/javascript" src="script.js"></script>
     </head>
@@ -248,12 +243,15 @@
         var clickTag = "https://panamacity.wordcamp.org/2019/";
     </script>
     
-    <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:300px; height:250px">
+    <div id="animation_container" style="background-color:#19369c; width:300px; height:250px">
 		<a href="javascript:void(window.open(clickTag))">
-            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:300px; height:250px; position: relative; left: 0px; top: 0px; display: block;background-color: #008299;">
+            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:300px; height:250px; position: relative; left: 0px; top: 0px; display: block;background-color: #19369c;">
                 
                 <!-- 1st frame -->
+                <img class="animate fade" id="copy1F1" src="images/copy1F1.png" alt="" style="position: absolute; top: 0px; left: 0px; width: 300px; z-index: 2;height: auto;">
                 
+                <img class="animate fadeUp delay3" id="copy2F1" src="images/copy2F1.png" alt="" style="position: absolute; width: 300px; top: 0px; left: 0px; height: auto; opacity: 0; z-index: 2;">
+                <img class="animate fadeUp delay3" id="logoF1" src="images/logo_big_gradient.png" alt="" style="position: absolute; width: 110px; top: 90px; left: 95px; height: auto; opacity: 0; z-index: 2;">
                 <!-- 2nd frame -->
             </div>
         </a>
