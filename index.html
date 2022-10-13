@@ -144,35 +144,78 @@
             animation-name: slideUp
         }
 
-        @-webkit-keyframes pointingRight {
-            0% {
-                left: 58px; opacity: 1;
+        @-webkit-keyframes zoomIn{
+            0%{
+                opacity:0;
+                -webkit-transform:scale3d(.3,.3,.3);
+                transform:scale3d(.3,.3,.3)
             }
-            50% {
-                left: 52px; opacity: 1;
+            50%{
+                opacity:1
             }
-            to {
-                left: 58px; opacity: 1;
-            }
-        }
-
-        @keyframes pointingRight {
-            0% {
-                left: 58px; opacity: 1;
-            }
-            50% {
-                left: 52px; opacity: 1;
-            }
-            to {
-                left: 58px; opacity: 1;
+            to{
+                opacity:1
             }
         }
-
-        .pointingRight {
-            -webkit-animation-name: pointingRight;
-            animation-name: pointingRight
+        @keyframes zoomIn{
+            0%{
+                opacity:0;
+                -webkit-transform:scale3d(.3,.3,.3);
+                transform:scale3d(.3,.3,.3)
+            }
+            50%{
+                opacity:1
+            }
+            to{
+                opacity:1
+            }
+        }
+        .zoomIn {
+            -webkit-animation-name:zoomIn;
+            animation-name:zoomIn
         }
         
+        @-webkit-keyframes pulse{
+            0%{
+                -webkit-transform:scaleX(1);
+                opacity: 0;
+                transform:scaleX(1)
+            }
+            50%{
+                -webkit-transform:scale3d(1.1,1.1,1.1);
+                opacity: 1;
+                transform:scale3d(1.1,1.1,1.1)
+            }
+            to{
+                -webkit-transform:scaleX(1);
+                opacity: 1;
+                transform:scaleX(1)
+            }
+        }
+        @keyframes pulse{
+            0%{
+                -webkit-transform:scaleX(1);
+                opacity: 0;
+                transform:scaleX(1)
+            }
+            50%{
+                -webkit-transform:scale3d(1.1,1.1,1.1);
+                opacity: 1;
+                transform:scale3d(1.1,1.1,1.1)
+            }
+            to{
+                -webkit-transform:scaleX(1);
+                opacity: 1;
+                transform:scaleX(1)
+            }
+        }
+        .pulse{
+            -webkit-animation-name:pulse;
+            animation-name:pulse;
+            -webkit-animation-timing-function:ease-in-out;
+            animation-timing-function:ease-in-out
+        }
+
         .animate {
             -webkit-animation-duration: var(--animation-duration);
             animation-duration: var(--animation-duration);
@@ -193,6 +236,12 @@
             animation-delay: 0.6s;
             -webkit-animation-delay: 0.6s;
             animation-delay: 0.6s;
+        }
+        .delay2 {
+            -webkit-animation-delay: 0.6s;
+            animation-delay: 2s;
+            -webkit-animation-delay: 0.6s;
+            animation-delay: 2s;
         }
         .delay3 {
             -webkit-animation-delay: 3s;
@@ -250,8 +299,8 @@
                 <!-- 1st frame -->
                 <img class="animate fade" id="copy1F1" src="images/copy1F1.png" alt="" style="position: absolute; top: 0px; left: 0px; width: 300px; z-index: 2;height: auto;">
                 
-                <img class="animate fadeUp delay3" id="copy2F1" src="images/copy2F1.png" alt="" style="position: absolute; width: 300px; top: 0px; left: 0px; height: auto; opacity: 0; z-index: 2;">
-                <img class="animate fadeUp delay3" id="logoF1" src="images/logo_big_gradient.png" alt="" style="position: absolute; width: 110px; top: 90px; left: 95px; height: auto; opacity: 0; z-index: 2;">
+                <img class="animate fade delay3" id="copy2F1" src="images/copy2F1.png" alt="" style="position: absolute; width: 300px; top: 0px; left: 0px; height: auto; opacity: 0; z-index: 2;">
+                <img class="animate pulse delay3" id="logoF1" src="images/logo_big_gradient.png" alt="" style="position: absolute; width: 110px; top: 90px; left: 95px; height: auto; opacity: 0; z-index: 2;">
                 <!-- 2nd frame -->
             </div>
         </a>

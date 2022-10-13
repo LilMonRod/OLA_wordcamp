@@ -25,7 +25,7 @@ function init() {
     
         logoF1.classList.remove("delay3");
         disappearCopyF1(logoF1);
-    }, "4500"); // +200
+    }, "5500"); // +200
 }
 
 function addAnimation(element, animation) {
@@ -38,10 +38,10 @@ function appearCopyF1(copy) {
 }
 
 function disappearCopyF1(copy) {
-    if (copy.id == "copy1F1") {
-        copy.classList.remove('fade');
+    if (copy.id == "logoF1") {
+        copy.classList.remove('pulse');
     } else {
-        copy.classList.remove('fadeUp');
+        copy.classList.remove('fade');
     }
     copy.classList.add('fadeOut');
 }
