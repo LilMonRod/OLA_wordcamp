@@ -7,11 +7,8 @@ function init() {
     const logoF1 = document.getElementById('logoF1');
 
     const logoF2 = document.getElementById('logoF2');
-    const copy1F2 = document.getElementById('copy1F2');
-    const copy2F2 = document.getElementById('copy2F2')
-    
-    const copyCTA = document.getElementById('copyCTA');
-    const arrow = document.getElementById('arrow');
+
+    const CTA = document.getElementById('CTA');
 
 
     setTimeout(() => {
@@ -25,7 +22,14 @@ function init() {
     
         logoF1.classList.remove("delay3");
         disappearCopyF1(logoF1);
-    }, "5500"); // +200
+    }, "5500");
+    setTimeout(() => {
+        // appear copys endframe 
+        appearCopyF2(logoF2)
+    
+        CTA.classList.add("delay")
+        CTA.classList.add("pulse");
+    }, "5700"); // +200
 }
 
 function addAnimation(element, animation) {
